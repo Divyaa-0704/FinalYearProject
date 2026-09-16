@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `animals` (
     `Species` VARCHAR(50) NOT NULL,
     `Name` VARCHAR(50),
     `Age` INT,
-    `Status` ENUM('Present', 'Rescued', 'Deceased') DEFAULT 'Present',
+    `Status` VARCHAR(50) DEFAULT 'Present',
     `Health_Condition` ENUM('Good', 'Critical', 'Recovering') DEFAULT 'Good',
     `Park_ID` INT DEFAULT 1,
     `Adopter_Name` VARCHAR(100),

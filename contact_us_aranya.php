@@ -31,16 +31,18 @@ $conn->close();
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 20px 10px;
+            box-sizing: border-box;
             background-color: rgb(148, 105, 78); 
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
         .container {
             display: flex;
-            width: 80%;
+            flex-wrap: wrap;
+            width: 90%;
             max-width: 900px;
             background-color: #fff; 
             border-radius: 8px;

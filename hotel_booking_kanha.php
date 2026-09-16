@@ -29,8 +29,8 @@
         }
     </script>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 via-blue-600 to-blue-300">
-    <div class="bg-white p-8 rounded-2xl shadow-2xl w-96 border border-blue-400">
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 via-blue-600 to-blue-300 p-4">
+    <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md border border-blue-400">
         <h2 class="text-2xl font-bold text-center text-blue-800">Hotel Booking</h2>
         
         <form id="bookingForm" action="hotel_bill_kanha.php" method="POST">

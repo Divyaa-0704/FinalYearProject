@@ -196,17 +196,21 @@
             <?php
             require_once __DIR__ . '/db_connect.php';
 
-            // Only fetch animals that are NOT deceased
-            $sql = "SELECT Animal_ID, Name, Species, Description, Status FROM animals WHERE Status != 'Deceased'";
-            $result = $conn->query($sql);
+            $result = false;
+            try {
+                $sql = "SELECT * FROM animals WHERE Status != 'Deceased'";
+                $result = $conn->query($sql);
+            } catch (Throwable $e) {
+                $result = false;
+            }
 
             if ($result && $result->num_rows > 0):
                 while ($row = $result->fetch_assoc()):
-                    $animalName = htmlspecialchars($row['Name']);
-                    $animalSpecies = htmlspecialchars($row['Species']);
-                    $animalDescription = htmlspecialchars($row['Description']);
-                    $animalID = htmlspecialchars($row['Animal_ID']);
-                    $status = htmlspecialchars($row['Status']);
+                    $animalName = htmlspecialchars($row['Name'] ?? 'Wildlife');
+                    $animalSpecies = htmlspecialchars($row['Species'] ?? 'Animal');
+                    $animalDescription = htmlspecialchars(!empty($row['Description']) ? $row['Description'] : ($animalName . ' is a wonderful animal in our conservation program.'));
+                    $animalID = htmlspecialchars($row['Animal_ID'] ?? $row['id'] ?? '1');
+                    $status = htmlspecialchars($row['Status'] ?? 'Present');
 
                     $imagePath = "images/" . strtolower($animalSpecies) . ".jpg";
                     if (!file_exists($imagePath)) {
@@ -239,7 +243,7 @@
             <?php
                 endwhile;
             else:
-                echo "<p>No animals available for adoption at the moment.</p>";
+                echo "<p style='grid-column: 1/-1; font-size: 18px; color: #555; padding: 40px;'>No animals available for adoption at the moment.</p>";
             endif;
             $conn->close();
             ?>

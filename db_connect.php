@@ -34,6 +34,54 @@ if (!isset($conn) || !($conn instanceof mysqli)) {
 
     // Expose $db as well for scripts expecting $db
     $db = $conn;
+
+    // Self-healing database initialization: ensure all tables and seed records exist
+    static $schema_verified = false;
+    if (!$schema_verified) {
+        $schema_verified = true;
+        $needs_init = false;
+        try {
+            $test_query = @$conn->query("SELECT COUNT(*) FROM animals");
+            if (!$test_query || (int)($test_query->fetch_row()[0] ?? 0) === 0) {
+                $needs_init = true;
+            }
+        } catch (Throwable $e) {
+            $needs_init = true;
+        }
+
+        if ($needs_init && file_exists(__DIR__ . '/database.sql')) {
+            $sql_content = file_get_contents(__DIR__ . '/database.sql');
+            $lines = explode("\n", $sql_content);
+            $clean_sql = '';
+            foreach ($lines as $line) {
+                $trimmed = trim($line);
+                if ($trimmed !== '' && strpos($trimmed, '--') !== 0) {
+                    $clean_sql .= $line . "\n";
+                }
+            }
+            $queries = explode(';', $clean_sql);
+            foreach ($queries as $q) {
+                $q = trim($q);
+                if (!empty($q)) {
+                    try {
+                        @$conn->query($q);
+                    } catch (Throwable $e) {
+                        // ignore individual errors
+                    }
+                }
+            }
+        }
+
+        // Ensure Description and animal_type exist if table was already created earlier
+        try {
+            @$conn->query("ALTER TABLE `animals` ADD COLUMN IF NOT EXISTS `Description` TEXT");
+            @$conn->query("ALTER TABLE `animals` ADD COLUMN IF NOT EXISTS `animal_type` VARCHAR(50) DEFAULT 'Mammal'");
+            @$conn->query("ALTER TABLE `animals` ADD COLUMN IF NOT EXISTS `category` VARCHAR(50) DEFAULT 'Carnivore'");
+            @$conn->query("ALTER TABLE `animals` MODIFY COLUMN `Status` VARCHAR(50) DEFAULT 'Present'");
+        } catch (Throwable $e) {
+            // ignore if unsupported
+        }
+    }
 }
 
 // Expose $pdo for scripts using PDO

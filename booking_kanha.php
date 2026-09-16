@@ -8,11 +8,12 @@
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 20px 10px;
+            box-sizing: border-box;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background: linear-gradient(135deg, #8B5A2B, #CD853F);
         }
         .container {
@@ -20,8 +21,10 @@
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            width: 400px;
+            width: 100%;
+            max-width: 440px;
             text-align: center;
+            box-sizing: border-box;
         }
         .section {
             margin-bottom: 20px;

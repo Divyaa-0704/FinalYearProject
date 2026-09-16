@@ -60,9 +60,12 @@
         }
         .container {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
             align-items: stretch;
             margin-bottom: 20px;
+            padding: 0 10px;
         }
         .card {
             width: 320px;
