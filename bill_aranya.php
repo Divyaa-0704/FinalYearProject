@@ -25,12 +25,13 @@ $total_price = $booking['tickets'] * $package_details[$package_key]['price'];
             font-family: 'Poppins', sans-serif;
             background: #FAF3E0;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             flex-direction: column;
-            position: relative;
             margin: 0;
+            padding-top: 110px;
+            box-sizing: border-box;
         }
         .navbar {
             width: 100%;
@@ -44,6 +45,7 @@ $total_price = $booking['tickets'] * $package_details[$package_key]['price'];
             left: 0;
             right: 0;
             height: 90px;
+            z-index: 100;
         }
         .navbar img {
             width: 170px;
@@ -66,15 +68,19 @@ $total_price = $booking['tickets'] * $package_details[$package_key]['price'];
         .container {
             width: 100%;
             max-width: 500px;
-            margin-top: 80px;
+            margin-top: 20px;
         }
         .bill-container {
             background: #F5DEB3;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            width: 400px;
+            width: 90%;
+            max-width: 450px;
+            margin-top: 20px;
+            margin-bottom: 40px;
             text-align: center;
+            box-sizing: border-box;
         }
         h1 {
             color: #5A3825;
@@ -108,10 +114,9 @@ $total_price = $booking['tickets'] * $package_details[$package_key]['price'];
             background: #8B4513;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
+            padding: 14px 0;
+            margin-top: auto;
+            position: relative;
         }
     </style>
 </head>

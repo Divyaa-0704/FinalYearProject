@@ -58,6 +58,22 @@
         .highlight {
             color: #d9534f;
         }
+        @media (max-width: 768px) {
+            .history {
+                width: 95%;
+                padding: 20px 0;
+            }
+            .history-block, .history-block:nth-child(even), .history-block:nth-child(odd) {
+                flex-direction: column !important;
+                margin: 30px 0;
+            }
+            .history-block img, .text {
+                width: 100%;
+            }
+            .history-block img {
+                margin-bottom: 15px;
+            }
+        }
     </style>
 </head>
 <body>

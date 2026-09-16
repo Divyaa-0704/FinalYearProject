@@ -27,10 +27,11 @@ $total_price = $booking['tickets'] * $package_details[$package_key]['price'];
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            justify-content: flex-start;
+            min-height: 100vh;
             margin: 0;
-            position: relative;
+            padding-top: 110px;
+            box-sizing: border-box;
         }
         .navbar {
             width: 100%;
@@ -66,7 +67,10 @@ $total_price = $booking['tickets'] * $package_details[$package_key]['price'];
         .container {
             width: 100%;
             max-width: 500px;
-            margin-top: 80px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            padding: 0 15px;
+            box-sizing: border-box;
         }
         .bill-container {
             background: #F5DEB3;
@@ -107,10 +111,9 @@ $total_price = $booking['tickets'] * $package_details[$package_key]['price'];
             background: #8B4513;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
+            padding: 14px 0;
+            margin-top: auto;
+            position: relative;
         }
     </style>
 </head>
