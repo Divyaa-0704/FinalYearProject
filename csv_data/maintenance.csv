@@ -1,0 +1,6 @@
+maintenance_id,park_id,maintenance_type,cost,date,description
+1,1,Trail Repair,2000.0,2024-01-05,Repaired walking trails damaged by rain.
+2,1,Fence Repair,1500.0,2024-02-10,Fixed broken fences around the park.
+3,1,Shelter Maintenance,2500.0,2024-03-15,Reinforced animal shelters.
+4,1,Pond Cleaning,1000.0,2024-04-20,Cleaned algae from the pond.
+5,1,Parking Lot Repair,1800.0,2024-05-25,Repaired potholes in the parking lot.

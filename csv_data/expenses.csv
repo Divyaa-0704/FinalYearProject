@@ -1,0 +1,6 @@
+expense_id,park_id,category,amount,date,description
+1,1,Maintenance,2500.0,2024-01-10,Trail repairs
+2,1,Animal Care,1800.0,2024-02-15,Veterinary supplies
+3,1,Employee Salaries,3000.0,2024-03-01,Monthly payroll
+4,1,Equipment,1500.0,2024-04-20,Security cameras installation
+5,1,Events,1200.0,2024-05-30,Annual park festival expenses

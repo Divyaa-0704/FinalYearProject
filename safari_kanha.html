@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoo Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            background-color: #7a4c1f; 
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            height: 80px; 
+        }
+        .logo {
+            color: white;
+            font-size: 5px;
+            font-weight: bold;
+            margin-right: 20px;
+            width: 140px; 
+            height: auto; 
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin-left: 70px;
+        }
+        .nav-links li {
+            margin: 0 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 25px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #FFD700; 
+        }
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            background-color: #8b5e3c; 
+            padding: 30px 40px;
+        }
+        .marquee-content {
+            display: flex;
+            width: 200%;
+            animation: marquee 15s linear infinite;
+        }
+         .marquee-content img {
+            width: 300px; 
+            height: 300px; 
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+         }
+         @keyframes marquee {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                 transform: translateX(-50%);
+                }
+            }
+            .book-button {
+                display: inline-block;
+                background-color: #462502; /* Blue color */
+                color: white;
+                font-weight: bold;
+                text-decoration: none;
+                padding: 12px 20px;
+                border-radius: 8px;
+                transition: background-color 0.3s, transform 0.2s;
+                font-size: 16px;
+                box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            }
+            .book-button:hover {
+                background-color: #b37400; 
+                transform: scale(1.05); 
+            }
+            </style>
+    </head>
+    <body class="bg-[#3c2a20] text-white">
+    <nav>
+        <div class="logo">
+            <a href="home_kanha.html">
+                <img src="logo.png" alt="Kanha National Park Logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home_kanha.html">Home</a></li>
+            <li><a href="our_history_kanha.html">Our History</a></li>
+            <li><a href="contact_us_kanha.php">Contact Us</a></li>
+        </ul>
+    </nav>
+    <header class="relative h-[500px] bg-[#3c2a20] flex items-center justify-between px-16">
+        <div class="text-left max-w-lg">
+            <h1 class="text-5xl font-extrabold">GET A TASTE</h1>
+            <h2 class="text-3xl font-bold mt-2">TIGER ZOO</h2>
+            <p class="mt-4 text-lg">Zoo is a true family destination, providing entertainment and learning experiences in a natural outdoor environment.</p>
+        </div>
+        <img src="tiger.jpg" alt="Tiger Image" class="h-[500px] w-auto object-cover rounded-lg shadow-lg">
+    </header>
+    <section class="bg-[#8b5e3c] py-6">
+        <div class="max-w-6xl mx-auto flex justify-around text-center">
+            <div>
+                <img src="clock.gif" alt="Clock Icon" class="mx-auto mb-2">
+                <h3 class="text-lg font-bold">ALL IN A ZOO</h3>
+                <p>OPENING HOURS</p>
+                <p>9:00 AM - 8:00 PM</p>
+            </div>
+            <div>
+                <img src="location.gif" alt="Location Icon" class="mx-auto mb-2">
+                <h3 class="text-lg font-bold">ALL IN A ZOO</h3>
+                <p>LOCATION MAP</p>
+                <p>Dolakpur</p>
+            </div>
+            <div>
+                <img src="ticket.gif" alt="Ticket Icon" class="mx-auto mb-2">
+                <h3 class="text-lg font-bold">ALL IN A ZOO</h3>
+                <a href="book_tickets_kanha.php" class="book-button">BOOK TICKETS</a>
+            </div>
+        </div>
+    </section>
+    <section class="relative py-16 bg-[#c48c3a]">
+        <div class="max-w-6xl mx-auto flex items-center">
+            <img src="giraffe.jpg" alt="Giraffe Image" class="w-1/3 rounded-lg shadow-lg">
+            <div class="ml-10">
+                <h2 class="text-4xl font-extrabold">EXPERIENCES</h2>
+                <h3 class="text-2xl font-bold mt-2">GIRAFFE FEEDING</h3>
+                <p class="mt-4 max-w-2xl text-lg">Brrringbrrring... Meet the giraffe family at the Giraffe Feeding station. Our high-built station will bring you closer to our graceful and loving giraffe family. Remember to wave your carrots and lettuce leaves to see the giraffe’s 45cm long tongues!</p>
+            </div>
+        </div>
+    </section>
+    <section class="relative py-16 bg-[#3c2a20] text-white">
+        <div class="max-w-6xl mx-auto flex items-center">
+            <div class="mr-10">
+                <h2 class="text-4xl font-extrabold">SAFARI TOUR</h2>
+                <p class="mt-4 max-w-2xl text-lg">Magnificently positioned against the imposing backdrop of Jebel Hafeet, and a majestic finger-like extension of the rugged Hajar Mountains, the Al Ain Safari has been masterfully crafted out of the desert environment to incorporate its pristine surrounds.</p>
+            </div>
+            <img src="safari_truck.jpg" alt="Safari Truck" class="w-1/3 rounded-lg shadow-lg">
+        </div>
+    </section>
+    <section class="bg-[#8b5e3c] py-16">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl font-extrabold mb-6">EXPERIENCES</h2>
+            <section class="marquee-container">
+                <div class="marquee-content">
+                    <img src="Giraffe2.jpg" alt="Giraffe">
+                    <img src="iguana.jpg" alt="Iguana">
+                    <img src="hippo1.jpg" alt="Hippo">
+                    <img src="parrot.jpg" alt="Parrot">
+                    <img src="lemur.jpg" alt="Lemur">
+                    <img src="lion.jpg" alt="Lion">
+                    <img src="crocodile.jpg" alt="Crocodile">
+                    <img src="elephant.jpg" alt="Elephant">
+                    <img src="eagle.jpg" alt="Eagle">
+                    <img src="kangaroo.jpg" alt="Kangaroo">
+                    <img src="koala.jpg" alt="Koala">
+                    <img src="Giraffe2.jpg" alt="Giraffe">
+                    <img src="iguana.jpg" alt="Iguana">
+                    <img src="hippo1.jpg" alt="Hippo">
+                    <img src="parrot.jpg" alt="Parrot">
+                    <img src="lemur.jpg" alt="Lemur">
+                    <img src="lion.jpg" alt="Lion">
+                    <img src="crocodile.jpg" alt="Crocodile">
+                    <img src="elephant.jpg" alt="Elephant">
+                    <img src="eagle.jpg" alt="Eagle">
+                    <img src="kangaroo.jpg" alt="Kangaroo">
+                    <img src="koala.jpg" alt="Koala">
+                    <img src="Giraffe2.jpg" alt="Giraffe">
+                    <img src="iguana.jpg" alt="Iguana">
+                    <img src="hippo1.jpg" alt="Hippo">
+                    <img src="parrot.jpg" alt="Parrot">
+                    <img src="lemur.jpg" alt="Lemur">
+                    <img src="lion.jpg" alt="Lion">
+                    <img src="crocodile.jpg" alt="Crocodile">
+                    <img src="elephant.jpg" alt="Elephant">
+                    <img src="eagle.jpg" alt="Eagle">
+                    <img src="kangaroo.jpg" alt="Kangaroo">
+                    <img src="koala.jpg" alt="Koala">
+                </div>
+            </section>
+        </div>
+    </section>
+    <footer class="bg-[##7a4c1f] text-white py-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="flex justify-center space-x-6 font-bold">
+                <a href="#" class="hover:underline">Instagram</a>
+                <a href="#" class="hover:underline">Twitter</a>
+                <a href="#" class="hover:underline">Facebook</a>
+            </div>
+            <p class="mt-2">Contact us: kanhanationalpark@gmail.com | +91 9916935156/ +91 7019223327 | <a href="https://bannerughattabiopark.org/" class="underline" target="_blank">https://bannerughattabiopark.org</a></p>
+        </div>
+    </footer>
+</body>
+</html>

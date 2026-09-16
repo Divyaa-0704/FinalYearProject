@@ -1,0 +1,9 @@
+.git
+.gitignore
+__pycache__
+*.pyc
+debug_log.txt
+.vscode
+*.bat
+scratch
+*.xlsx

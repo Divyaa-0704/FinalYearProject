@@ -1,0 +1,96 @@
+<?php
+session_start();
+
+// Ensure only the Super User can access this page
+if (!isset($_SESSION['role']) || strtolower(trim($_SESSION['role'])) !== 'super user') {
+    header("Location: kanha_login.php"); // Redirect to login if not Super User
+    exit();
+}
+
+$username = $_SESSION['username'] ?? 'Super User';
+
+// Define paths
+$python_path = "python"; // Adjust this if needed
+$flask_script = "C:/xampp/htdocs/Final Year Project/dashboard.py";
+
+// Check if Flask is running
+$flask_running = shell_exec("netstat -ano | findstr :5000");
+
+// If Flask is not running, start it
+if (!$flask_running) {
+    exec("start /B \"\" " . escapeshellarg($python_path) . " " . escapeshellarg($flask_script));
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superuser Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 20px;
+            border-radius: 5px;
+        }
+        iframe {
+            width: 90%;
+            height: 600px;
+            border: none;
+            display: none;
+        }
+        .logout {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.onload = function() {
+            alert("Welcome Super User, <?php echo htmlspecialchars($username); ?>!");
+        };
+
+        function openDashboard(value) {
+            var frame = document.getElementById("dashboardFrame");
+            if (value === "dashboard") {
+                frame.src = "http://127.0.0.1:5000/";
+                frame.style.display = "block";
+            } else if (value === "aranya") {
+                frame.src = "http://127.0.0.1:5000/aranya";
+                frame.style.display = "block";
+            } else {
+                frame.style.display = "none";
+            }
+        }
+    </script>
+
+    <h2>Superuser Dashboard</h2>
+    <label for="dashboardDropdown">Select Dashboard:</label>
+    <select id="dashboardDropdown" onchange="openDashboard(this.value)">
+        <option value="">-- Select --</option>
+        <option value="dashboard">National Park Data Dashboard</option>
+        <option value="aranya">Aranya National Park Dashboard</option>
+    </select>
+
+    <iframe id="dashboardFrame"></iframe>
+
+    <br><br>
+    <a href="logout.php" class="logout">Logout</a>
+</body>
+</html>

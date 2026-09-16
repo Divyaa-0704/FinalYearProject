@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Flip Cards</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            margin: 0;
+            padding-bottom: 80px; /* Ensures space at the bottom */
+
+        }
+
+        .header {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            background-color: rgb(92, 41, 0);
+            color: white;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 90%;
+    max-width: 1400px;
+    padding: 20px;
+    margin-top: 80px;
+    margin-bottom: 10px; /* Add bottom margin */
+}
+
+
+        .card-container {
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card .front, .card .back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 10px;
+        }
+
+        .card .front {
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 90%;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card .front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 30px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #3d2402;
+            margin-top: 10px;
+        }
+
+
+        .heart {
+            cursor: pointer;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .heart.red {
+            color: red;
+        }
+
+        .card .back {
+            background-color: #3d2402;
+            color: white;
+            transform: rotateY(180deg);
+            font-size: 18px;
+            padding: 15px;
+        }
+        
+        footer {
+    background-color: rgb(92, 41, 0);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+}
+
+
+        @media (max-width: 1200px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 800px) {
+            .grid-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Welcome to Kanha National Park Gallery</div>
+    <div class="grid-container" id="animalCards"></div>
+
+    <script>
+        const animals = [
+            { name: "Lion", fact: "A lion's roar can be heard from 5 miles away!", img: "lion.jpg" },
+            { name: "Tiger", fact: "No two tigers have the same stripe pattern.", img: "tiger.jpg" },
+            { name: "Elephant", fact: "Elephants can 'hear' through their feet!", img: "elephant.jpg" },
+            { name: "Cheetah", fact: "Cheetahs can accelerate faster than a sports car!", img: "cheetah.jpg" },
+            { name: "Panda", fact: "Pandas spend up to 14 hours a day eating!", img: "panda.jpg" },
+            { name: "Wolf", fact: "Wolves have 42 teeth, more than a dog!", img: "wolf.jpg" },
+            { name: "Rhino", fact: "Rhino horns are made of the same material as hair!", img: "rhino.jpg" },
+            { name: "Gorilla", fact: "Gorillas can catch human colds!", img: "gorilla.jpg" },
+            { name: "Polar Bear", fact: "Polar bears have black skin under their white fur!", img: "polarbear.jpg" },
+            { name: "Kangaroo", fact: "Kangaroos can jump 3 times their body length!", img: "kangaroo.jpg" },
+            { name: "Giraffe", fact: "Giraffes have the same number of neck bones as humans!", img: "giraffe.jpg" },
+            { name: "Crocodile", fact: "Crocodiles can live up to 100 years!", img: "crocodile.jpg" },
+            { name: "Hippo", fact: "Hippos sweat an oily red substance that acts as sunscreen!", img: "hippo.jpg" },
+            { name: "Ostrich", fact: "Ostriches can run faster than horses!", img: "ostrich.jpg" },
+            { name: "Puma", fact: "Pumas can jump 20 feet in a single leap!", img: "puma.jpg" },
+            { name: "Red Panda", fact: "Red pandas use their tails as blankets in cold weather!", img: "redpanda.jpg" },
+            { name: "Wild Horse", fact: "Wild horses can sleep both standing up and lying down!", img: "wildhorse.jpg" },
+            { name: "Tortoise", fact: "Some tortoises can live over 150 years!", img: "tortoise.jpg" },
+            { name: "Leopard", fact: "Leopards can drag prey twice their weight up trees!", img: "leopard.jpg" },
+            { name: "Peacock", fact: "Peacocks can fake a cry to attract mates!", img: "peacock.jpg" },
+            { name: "Eagle", fact: "Eagles can see prey from over 2 miles away!", img: "eagle.jpg" },
+            { name: "Penguin", fact: "Some penguins can dive over 500 feet deep!", img: "penguin.jpg" },
+            { name: "Zebra", fact: "Zebras communicate with facial expressions and sounds!", img: "zebra.jpg" },
+            { name: "Koala", fact: "Koalas sleep up to 20 hours a day!", img: "koala.jpg" }
+        ];
+
+        const container = document.getElementById("animalCards");
+
+        animals.forEach(animal => {
+            const cardHTML = `
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front">
+                            <div class="image-container">
+                                <img src="${animal.img}" alt="${animal.name}">
+                            </div>
+                            <div class="info">
+                                <span>${animal.name}</span>
+                                <span class="heart" onclick="event.stopPropagation(); toggleHeart(this)">♡</span>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <p>${animal.fact}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += cardHTML;
+        });
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseover', function () {
+                this.classList.add('flipped');
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.classList.remove('flipped');
+            });
+        });
+
+        function toggleHeart(element) {
+            element.classList.toggle("red");
+            element.innerHTML = element.classList.contains("red") ? "❤️" : "♡";
+        }
+    </script>
+    <footer>
+        © 2025 Kanha National Park. All Rights Reserved.
+    </footer>
+</body>
+</html>

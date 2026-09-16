@@ -1,0 +1,16 @@
+User_ID,Name,Role,Contact_Info,Username,Password,Park_ID,Position,Hire_Date,Salary,Email
+1,Divya,Super User,9234567890,Divya,$2y$10$sMZ0jf85/3bIiqXFlDoTxOf8tVKbQ28AXmJa8bD95l8qJiYUVyEya,1,Super User,,0.0,divya07@gmail.com
+2,Trupthi,Super User,9874567891,Trupthi,$2y$10$.ugS3ybn2GbvHtfo72YyXeFG3COX0TcPBCYLRvV6uni9pQcNWDecO,1,Super User,,0.0,trupthi12@gmail.com
+3,DishaD,Admin,9904567890,Dishad,$2y$10$UA8yCP1qvhJRDZfHLUrA1ummwXnPL5qqbG.GjPbAG2QTYX2ogmpum,1,Admin,2020-01-12,100000.0,dishad@gmail.com
+4,DishaA,Admin,9114567891,Dishaa,$2y$10$kUCKob.FESn7AS5yBTF.YuuUlvEYlMsp8AqkSTmBF1P97oFgXc1lO,1,Admin,2020-05-14,100000.0,dishaa@gmail.com
+5,Narmadha,Employee,9875678901,Narmadha,$2y$10$7sDNMEf4qFZVkO.j1ZnijeviYER6Y7uP6AQX7bgTqkCXijOxI3YXq,1,Veterinarian,2022-03-15,60000.0,narmadha@gmail.com
+6,Bhandavya,Employee,9345678902,Bhandavya,$2y$10$JXOB4B8ZgnhB8b1eOkgz4OShwnrgeW.CzzwsjLs1HoiCTztmZ86L6,1,Park Ranger,2021-06-10,45000.0,bhandavya@gmail.com
+7,Ashmitha,Employee,9875678903,Ashmitha,$2y$10$ZGoGvyJg0ByQdEnroIPtteQ3qkWxLCpTmvH6WJfTOjMDcpn1AlFxe,1,Manager,2020-01-20,70000.0,ashmitha@gmail.com
+8,Kruthi,Employee,9002678904,Kruthi,$2y$10$Cq81DvZ1nMkBS9Ra7elCdeNzhjdl/3kzal/cdT7eFNFk0nIqSTbES,1,Security Officer,2023-09-05,40000.0,kruthi@gmail.com
+9,Diya,Employee,9125678905,Diya,$2y$10$be2fReVJn/1AGGZgYaWaEuzH4VxSdC8j8vi40NSQRUbElTAIf.RNi,1,Researcher,2021-11-25,50000.0,diya@gmail.com
+10,Samreen,Employee,9345678901,Samreen,$2y$10$xKmsYpL/mXGF31I.FliUhODzcTvfqrXg7d1DlE6crJU3hS2J5RzzO,1,Veterinarian,2022-03-15,60000.0,samreen@gmail.com
+11,Anisha,Employee,9565678902,Anisha,$2y$10$Gu7oRc.WbgCAQfsrUx1W1OlUJs0aJV/98aEyZI27CtApV1XufUG7K,1,Park Ranger,2021-06-10,45000.0,anisha@gmail.com
+12,Shabnam,Employee,9095678903,Shabnam,$2y$10$3XYM1oEfVbClho6a57dLw.xkoB8DVA1fO/s1cDsu0Rp//3XBXlzP2,1,Manager,2020-01-20,70000.0,shabnam@gmail.com
+29,Sanju,Visitor,9876543201,sanju,$2y$10$l7mq20zM2kMsXHxWZ0XZLelctZh08GNmyuhGwfbk9.T0YcgIpGj3i,0,nan,,0.0,sanju@gmail.com
+30,Divi,Visitor,9876543201,Kiko,$2y$10$NLofX5kpzzLhZ/GQm27LvuzzQrx9wr4Gwj1VDhOgPlfmg9dYny.N2,0,nan,,0.0,kiko@gmail.com
+31,Kookie,Visitor,9876543201,kookie,$2y$10$FpFZ8Wznhqqk2M2m.rX7MOGM.9wDfg80H3.pbwamO0FeNrv8b9Tra,0,nan,,0.0,jk@gmail.com

@@ -1,0 +1,7 @@
+DirectoryIndex index.php index.html home.html
+
+# Prevent directory browsing
+Options -Indexes
+
+# UTF-8 encoding
+AddDefaultCharset UTF-8

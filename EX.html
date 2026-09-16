@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanha National Park</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .sidebar {
+            background-color: #145a7c;
+            width: 200px;
+            height: calc(100vh - 60px);
+            position: relative;
+            padding-top: 20px;
+            margin-top: 0;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .sidebar a:hover {
+            background-color: #145a7c;
+        }
+
+        .header {
+            background-color: #145a7c;
+            color: white;
+            padding: 10px 20px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .info {
+            font-size: 14px;
+        }
+
+        .main {
+            margin-left: 200px;
+            padding: 20px;
+        }
+
+        .banner {
+            background-color: #3d9772;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            margin-top: 0;
+            position: relative;
+        }
+
+        .banner h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .banner p {
+            margin: 10px 0 0;
+            font-size: 18px;
+        }
+
+        .banner .buttons {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .banner .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #145a7c;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .banner .buttons button:hover {
+            background-color: #0f435a;
+        }
+
+        .grid {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .grid img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="info">
+            Dholakpur, Bangalore-560001 | Rescues: +91 7019223327, +91 9916935156 | Email: kanhanationalpark@gmail.com
+        </div>
+    </div>
+
+    <div class="banner">
+        <h1>Welcome to Kanha National Park!!!</h1>
+        <p>Discover the beauty and wildlife of Kanha.</p>
+        <div class="buttons">
+            <button onclick="location.href='adopt.html'">Adopt</button>
+            <button onclick="location.href='donate.html'">Donate</button>
+            <button onclick="location.href='login_kanha.php'">Login</button>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <a href="#">Home</a>
+    </div>
+
+    <div class="main">
+        <div class="grid">
+            <img src="gorilla.jpg" alt="Gorilla">
+            <img src="horse.jpg" alt="Horse">
+            <img src="lions.jpg" alt="Lions">
+            <img src="tiger.jpg" alt="Tiger">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+event_id,park_id,event_name,event_date,budget,description
+1,1,Wildlife Awareness Day,2024-03-10,5000.0,A day to promote awareness about wildlife.
+2,1,Annual Safari Run,2024-04-15,7000.0,Marathon through the park to raise funds.
+3,1,Eco-Friendly Workshop,2024-05-20,3000.0,Workshops on sustainability practices.
+4,1,Photography Contest,2024-06-10,4000.0,Photo contest showcasing park wildlife.
+5,1,Kids Adventure Day,2024-07-05,2000.0,Fun-filled activities for children.
